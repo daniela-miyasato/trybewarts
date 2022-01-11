@@ -18,7 +18,11 @@ const buttonEnviar = document.querySelector('#submit-btn');
 const inputTermos = document.querySelector('#agreement');
 
 function ativarButton() {
-  buttonEnviar.removeAttribute('disabled');
+  if (inputTermos.checked === true) {
+    buttonEnviar.disabled = false;
+  } else {
+    buttonEnviar.disabled = true;
+  }
 }
 
-inputTermos.addEventListener('change', ativarButton);
+inputTermos.addEventListener('click', ativarButton);
