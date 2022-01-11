@@ -18,3 +18,12 @@
   display: flex;
   flex-flow: row nowrap;
 }
+
+main {
+  display: flex;
+}
+
+#evaluation-form {
+  display: flex;
+  width: 675px;
+}
