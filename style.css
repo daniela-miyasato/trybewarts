@@ -37,3 +37,7 @@ main {
   display: flex;
   flex-flow: row nowrap;
 }
+
+#label-family {
+  margin: 10px;
+}
