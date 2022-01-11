@@ -12,3 +12,13 @@ function hello() {
 }
 
 buttonLogin.addEventListener('click', hello);
+
+const buttonEnviar = document.querySelector('#submit-btn');
+
+const inputTermos = document.querySelector('#agreement');
+
+function ativarButton() {
+  buttonEnviar.removeAttribute('disabled');
+}
+
+inputTermos.addEventListener('change', ativarButton);
