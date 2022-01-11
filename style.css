@@ -41,3 +41,7 @@ main {
 #label-family {
   margin: 10px;
 }
+
+#rate {
+  display: flex;
+}
