@@ -33,6 +33,8 @@
       </select>
     </div>
 
+    <hr>
+
     <label id='label-family'>Qual sua família?</label>
       <label>
         <input type="radio" name='family' value="Frontend">Frontend
@@ -43,6 +45,8 @@
       <label>
         <input type="radio" name='family' value="FullStack">FullStack
       </label>
+
+      <hr>
 
     <label id='label-content'>Qual conteúdo você está com mais vontade de aprender?</label>
       <label>
@@ -63,6 +67,8 @@
       <label>
         <input type="checkbox" value="Python">Python
       </label>
+
+      <hr>
 
       <div id='rate'>
         <label id='label-rate'>Como você avalia a Trybewarts?</label>
@@ -97,9 +103,12 @@
           <input type="radio" name='rate' value="10">10
         </label>
       </div>
-     
+
       <label class="textarea">Deixe seu comentário:</label>
-      <textarea maxlength="500"></textarea>
+      <textarea id='textarea' maxlength="500"></textarea>
+      <label id='counter' for='textarea'>500</label>
+
+      <hr>
 
       <label id='label-infos'>Você concorda com o uso das informações acima?
         <input type='checkbox' id='agreement' required>
