@@ -40,46 +40,66 @@ function contador() {
 
 textarea.addEventListener('keyup', contador);
 
-// const form = document.getElementById('evaluation-form');
-// const nome = document.getElementById('input-name').value;
-// const sobrenome = document.getElementById('input-lastname').value;
-
-// const nomeCompleto = `${nome} ${sobrenome}`;
-
-// const email = document.getElementById('input-email').value;
-// const casa = document.getElementById('house').value;
-// const familiaLista = document.getElementsByName('family');
-// let familia;
-// for (let i = 0; i < familiaLista.length; i += 1) {
-//   if (familiaLista[i].checked) {
-//     familia = familiaLista[i].value;
-//   }
-// }
-// const materias = document.getElementById('label-content').value;
-// const avaliacao = document.getElementById('rate').value;
-// const observacao = document.getElementById('textarea').value;
-
 // const respostas = [];
 // respostas.push(nomeCompleto, email, casa, familia, materias, avaliacao, observacao);
 
 // const main = document.getElementById('main');
-function newForm(event) {
-  event.preventDefault();
-  // form.parentNode.removeChild(form);
-  // const tagForm = document.createElement('form');
 
-  // for (let i = 0; i <= respostas.length; i += 1) {
-  // const p = document.createElement('p');
-  // p.innerText = respostas[i];
-  // forms.appendChild(p);
-  // }
-  // main.appendChild(form);
+textarea.addEventListener('keyup', contador);
 
-  // const p = document.createElement('p');
-  // const conteudo = document.createTextNode(`Nome: ${nomeCompleto}`);
-  // p.appendChild(conteudo);
-  // tagForm.appendChild(p);
-  // main.appendChild(tagForm);
+function constantes() {
+  const form = document.querySelector('#evaluation-form');
+  const name = document.querySelector('#input-name').value;
+  const sobreNome = document.querySelector('#input-lastname').value;
+  const email = document.querySelector('#input-email').value;
+  const casa = document.querySelector('#house').value;
+  const familiaLista = document.getElementsByName('family');
+  let familia;
+  for (let i = 0; i < familiaLista.length; i += 1) {
+    if (familiaLista[i].checked) {
+      familia = familiaLista[i].value;
+    }
+  }
+  form.innerHTML = `<p>Nome: ${name} ${sobreNome}</p> <p>Email: ${email}</p> <p>Casa: ${casa}</p> 
+  <p>Família: ${familia}</p>`;
+  const formV = form.innerHTML;
+  return formV;
 }
 
-buttonEnviar.addEventListener('click', newForm);
+function constantesTwo() {
+  // const avaliacaoLista = document.querySelectorAll('.rate');
+  // let avaliacao;
+  // for (let i = 0; i < avaliacaoLista.length; i += 1) {
+  //   if (avaliacaoLista[i].checked) {
+  //     avaliacao = avaliacaoLista[i].value;
+  //   }
+  // }
+  // return avaliacao;
+  const avaliacaoLista = document.querySelectorAll('.rate');
+
+  for (let i = 0; i < avaliacaoLista.length; i += 1) {
+    if (avaliacaoLista[i].checked) {
+      const avaliacao = avaliacaoLista[i].value;
+      return avaliacao;
+    }
+  }
+}
+
+function redefinir(event) {
+  event.preventDefault();
+  const form = document.querySelector('#evaluation-form');
+  const materiasLista = document.querySelectorAll('.subject');
+  let materias = [];
+  for (let i = 0; i < materiasLista.length; i += 1) {
+    if (materiasLista[i].checked) {
+      materias.push(materiasLista[i].value);
+    }
+  }
+  materias = materias.join(', ');
+  const observacao = document.getElementById('textarea').value;
+  const constantesTwoo = constantesTwo();
+  form.innerHTML = `${constantes()} <p>Matérias: ${materias}</p> 
+  <p>Avaliação: ${constantesTwoo}</p> <p>Observações: ${observacao} </p>`;
+}
+
+buttonEnviar.addEventListener('click', redefinir);
