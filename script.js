@@ -40,11 +40,6 @@ function contador() {
 
 textarea.addEventListener('keyup', contador);
 
-// const respostas = [];
-// respostas.push(nomeCompleto, email, casa, familia, materias, avaliacao, observacao);
-
-// const main = document.getElementById('main');
-
 textarea.addEventListener('keyup', contador);
 
 function constantes() {
@@ -67,14 +62,6 @@ function constantes() {
 }
 
 function constantesTwo() {
-  // const avaliacaoLista = document.querySelectorAll('.rate');
-  // let avaliacao;
-  // for (let i = 0; i < avaliacaoLista.length; i += 1) {
-  //   if (avaliacaoLista[i].checked) {
-  //     avaliacao = avaliacaoLista[i].value;
-  //   }
-  // }
-  // return avaliacao;
   const avaliacaoLista = document.querySelectorAll('.rate');
 
   for (let i = 0; i < avaliacaoLista.length; i += 1) {
